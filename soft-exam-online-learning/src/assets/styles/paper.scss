@@ -1,0 +1,45 @@
+.markTestPaper{
+  text-align: start;
+    .title.fixed{
+        width: 1380px;
+    }
+    .topics{
+        width: 1012px;
+    }
+    h4{
+        margin: 24px 0 0 0;
+    }
+    .topic-content{
+        display: flex;
+        padding: 24px 8px;
+        border-bottom: 1px solid #DCDFE6;
+
+        .left{
+            width: 100%;
+        }
+        .left .correctAnswer{
+            padding: 12px  0;
+            font-size: 16px;
+        }
+
+        .right{
+            padding: 0 24px;
+            font-size: 16px;
+        }
+        .right .correctAnswer{
+            padding: 12px  0;
+            font-size: 16px;
+        }
+    }
+    .topics .topic:last-child ul li:last-child{
+        border: none;
+    }
+
+    .userScore{
+      padding-left: 15px;
+    }
+
+
+}
+
+ 

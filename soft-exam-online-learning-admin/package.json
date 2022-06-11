@@ -1,0 +1,79 @@
+{
+  "name": "soft-exam-online-learning-admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@antv/g2": "^4.1.17",
+    "@antv/g6": "^4.3.3",
+    "@riophae/vue-treeselect": "0.4.0",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "echarts": "^5.2.2",
+    "element-ui": "^2.15.1",
+    "image-conversion": "^2.1.1",
+    "js-cookie": "2.2.1",
+    "jsencrypt": "3.0.0-rc.1",
+    "mavon-editor": "^2.10.1",
+    "@wangeditor/core": "^1.0.0",
+    "@wangeditor/editor": "^5.0.0",
+    "@wangeditor/editor-for-vue": "^1.0.0",
+    "@wangeditor/plugin-formula": "^1.0.8",
+    "@wangeditor/plugin-mention": "^0.0.5",
+    "nprogress": "0.2.0",
+    "path": "^0.12.7",
+    "quill": "1.3.7",
+    "sockjs-client": "^1.5.2",
+    "spark-md5": "^3.0.2",
+    "stompjs": "^2.3.3",
+    "swiper": "^5.2.0",
+    "v-calendar": "^2.3.2",
+    "vue": "^2.6.11",
+    "vue-axios": "^3.2.4",
+    "vue-cropper": "^0.5.6",
+    "vue-router": "^3.0.3",
+    "vue-simple-uploader": "^0.7.6",
+    "vue-table-with-tree-grid": "^0.2.4",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "1.32.0",
+    "sass-loader": "10.1.0",
+    "script-ext-html-webpack-plugin": "^2.1.5",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

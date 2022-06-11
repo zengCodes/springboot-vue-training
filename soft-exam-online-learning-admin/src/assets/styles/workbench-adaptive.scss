@@ -1,0 +1,393 @@
+// 工作台
+
+/* 大屏幕 */
+@media only screen and (min-width: 1990px) {
+}
+
+@media only screen and (min-width: 1680px) {
+  // 大屏监控
+  .monitor-button {
+    width: 90px;
+    height: 90px;
+
+    .monitor-icon {
+      margin-top: -20px;
+      color: #fff;
+      font-size: 40px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  // 左边内容
+  .left-main {
+    .one-main {
+      .center-circle-bg {
+        width: 40px;
+        height: 40px;
+        left: 180px;
+        bottom: 50px;
+      }
+
+      .left-bottom-circle-bg {
+        width: 178px;
+        height: 178px;
+      }
+
+      .right-big-circle-bg {
+        width: 400px;
+        height: 400px;
+      }
+
+      .right-top-circle-bg {
+        right: -42px;
+        top: -50px;
+      }
+
+      .item-img {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    .two-main {
+      .right-circle-bg {
+        top: 120px;
+      }
+
+      .left-big-circle-bg {
+        width: 500px;
+        height: 500px;
+      }
+
+      .weather {
+        position: absolute;
+        width: 103px;
+        height: 64px;
+        left: 67px;
+        top: 70px;
+        font-family: Microsoft YaHei;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 64px;
+        color: #ffffff;
+      }
+
+      .weather-quality {
+        top: 200px;
+      }
+    }
+
+    .left-bottom-item {
+      height: 53vh;
+
+      .item-header {
+        height: 70px;
+
+        .msg-title {
+          top: 34px;
+          font-size: 20px;
+        }
+      }
+
+      .msg-list {
+        top: 97px;
+
+        .list-item {
+          height: 56px;
+          margin-bottom: 25px;
+
+          .item-txt {
+            font-size: 16px;
+          }
+
+          .item-time {
+            bottom: -12px;
+          }
+        }
+      }
+
+      .tab-main {
+        .tab-btn button {
+          width: 64px;
+          height: 64px;
+        }
+
+        .tab-list {
+          .list-item {
+            width: 100px;
+            height: 30px;
+          }
+
+          .activite-item {
+            width: 100px;
+            height: 30px;
+          }
+        }
+      }
+
+      // 代办
+      .commision-list {
+        top: 97px;
+
+        .list-item {
+          height: 100px;
+
+          .item-title {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  // 右边内容
+  ::v-deep .right-main {
+    height: 100%;
+    flex: 0 0 20%;
+    position: relative;
+    margin-left: 30px;
+
+    .plan-main {
+      height: 75vh;
+
+      .main-header {
+        height: 70px;
+
+        .header-title {
+          font-size: 20px;
+          line-height: 70px;
+        }
+      }
+
+      .mian-calendar {
+        height: 300px;
+        margin-top: 90px;
+      }
+
+      .edit-plan {
+        top: 400px;
+
+        .tab-list {
+          .tab-item {
+            width: 100px;
+            height: 40px;
+          }
+
+          .activite-item {
+            width: 100px;
+            height: 30px;
+          }
+        }
+
+        .plan-list {
+          li {
+            i {
+              right: 15px;
+            }
+          }
+
+          .item-txt {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 中等屏幕 */
+@media only screen and (min-width: 992px) and (max-width: 1680px) {
+  // 大屏监控
+  .monitor-button {
+    width: 80px;
+    height: 80px;
+
+    .monitor-icon {
+      font-size: 35px;
+    }
+
+    span {
+      font-size: 10px;
+    }
+  }
+
+  // 左边内容
+  .left-main {
+    .one-main {
+      .center-circle-bg {
+        width: 20px;
+        height: 20px;
+        left: 120px;
+        top: 130px;
+      }
+
+      .left-bottom-circle-bg {
+        width: 130px;
+        height: 130px;
+      }
+
+      .right-big-circle-bg {
+        width: 300px;
+        height: 300px;
+      }
+
+      .right-top-circle-bg {
+        right: -50px;
+        top: -50px;
+      }
+
+      .item-img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .two-main {
+      .right-circle-bg {
+        top: 80px;
+      }
+
+      .left-big-circle-bg {
+        width: 400px;
+        height: 400px;
+      }
+
+      .weather {
+        position: absolute;
+        width: 103px;
+        height: 64px;
+        left: 67px;
+        top: 52px;
+        font-size: 40px;
+        font-family: Microsoft YaHei;
+        font-style: normal;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .weather-quality {
+        top: 150px;
+      }
+    }
+
+    .left-bottom-item {
+      height: 50vh;
+
+      .item-header {
+        height: 55px;
+
+        .msg-title {
+          top: 15px;
+          font-size: 17px;
+        }
+      }
+
+      .msg-list {
+        top: 80px;
+
+        .list-item {
+          height: 45px;
+          margin-bottom: 20px;
+
+          .item-txt {
+            font-size: 15px;
+          }
+
+          .item-time {
+            bottom: -5px;
+          }
+        }
+      }
+
+      .tab-main {
+        .tab-btn button {
+          width: 50px;
+          height: 50px;
+        }
+
+        .tab-list {
+          .list-item {
+            width: 75px;
+            height: 25px;
+          }
+
+          .activite-item {
+            width: 75px;
+            height: 25px;
+          }
+        }
+      }
+
+      // 代办
+      .commision-list {
+        top: 60px;
+        height: 320px !important;
+
+        .list-item {
+          height: 80px;
+
+          .item-title {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  // 右边内容
+  ::v-deep .right-main {
+    height: 100%;
+    flex: 0 0 20%;
+    position: relative;
+    margin-left: 30px;
+
+    .plan-main {
+      height: 69.5vh !important;
+
+      .main-header {
+        height: 50px;
+
+        .header-title {
+          font-size: 18px;
+          line-height: 50px;
+        }
+      }
+
+      .mian-calendar {
+        margin-top: 70px;
+        height: 200px;
+      }
+
+      .edit-plan {
+        top: 280px;
+
+        .tab-list {
+          .list-item {
+            width: 85px;
+            height: 40px;
+          }
+
+          .activite-item {
+            width: 85px;
+            height: 40px;
+          }
+        }
+
+        .plan-list {
+          li {
+            i {
+              right: 5px;
+            }
+          }
+
+          .item-txt {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}

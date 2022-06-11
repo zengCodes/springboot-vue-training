@@ -1,0 +1,21 @@
+@startuml
+participant 学员
+学员 -> 新建讨论页面 : 1.发表讨论
+activate 新建讨论页面
+新建讨论页面 -> 添加讨论 : 2.请求添加讨论
+activate 添加讨论
+添加讨论 -> 设置讨论 : 3.设置讨论信息
+activate 设置讨论
+设置讨论 -> 题目信息表 : 4.获取题目信息
+deactivate 添加讨论
+activate 题目信息表
+题目信息表 --> 设置讨论 : 5.返回题目信息
+设置讨论 -> 讨论信息表 : 6.保存讨论信息
+deactivate 题目信息表
+deactivate 设置讨论
+activate 讨论信息表
+讨论信息表 -> 讨论信息表 : 7.保存成功
+
+讨论信息表 --> 新建讨论页面 : 8.返回添加成功信息
+deactivate 讨论信息表
+@enduml

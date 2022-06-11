@@ -1,0 +1,68 @@
+// 弹出框底部按钮
+::v-deep .dialog-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .footer-button {
+    button{
+      margin: 20px;
+    }
+  }
+}
+// 弹出框
+::v-deep .paper-dialog {
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+}
+// 弹出框
+::v-deep .question-dialog {
+  height: 500px;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  .demo-ruleForm {
+    height: 450px;
+  }
+  .scroll-main {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  /* 滚动槽 */
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+  }
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// 状态
+.z-circle-icon{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  vertical-align:middle;
+}
+.z-item-txt{
+  display: inline-block;
+  line-height: 100%;
+}
+.z-wait{
+  background-color: #e6a23c; 
+}
+.z-success{
+  background-color: #52c41a;
+}

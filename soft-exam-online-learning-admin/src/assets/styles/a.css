@@ -1,0 +1,8 @@
+ /deep/ .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ /deep/ .name .footer-button button {
+  margin: 20px;
+}
