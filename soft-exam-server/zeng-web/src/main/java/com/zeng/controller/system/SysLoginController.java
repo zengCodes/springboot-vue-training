@@ -61,7 +61,7 @@ public class SysLoginController {
         ResponseBean ajax = ResponseBean.success();
         // 查询用户类型
         SysUser sysUser = iSysUserService.selectUserByUserName(loginBody.getUsername());
-        if (sysUser.getUserType() == "00") {
+        if (sysUser.getUserType().equals("00")) {
             // 生成令牌
             String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
                     loginBody.getUuid());

@@ -14,8 +14,6 @@
         <module>zeng-web</module>
         <module>zeng-framework</module>
         <module>zeng-business</module>
-        <module>zeng-mq-mail</module>
-        <module>zeng-mail</module>
         <module>zeng-mail-server</module>
     </modules>
 
