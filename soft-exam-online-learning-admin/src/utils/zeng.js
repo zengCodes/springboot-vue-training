@@ -50,8 +50,7 @@ export function download(file_url, fileName) {
 }
 
 export function getUserStatus() {
-  return [
-    {
+  return [{
       label: "启用",
       value: 1,
     },
@@ -63,8 +62,7 @@ export function getUserStatus() {
 }
 
 export function getApprovalState() {
-  return [
-    {
+  return [{
       label: "已通过",
       value: 1,
     },
@@ -80,8 +78,7 @@ export function getApprovalState() {
 }
 
 export function getAlbumsType() {
-  return [
-    {
+  return [{
       typeId: 1,
       typeName: "轮播展示",
     },
@@ -106,8 +103,7 @@ export function getApprovalStatus(status) {
 }
 
 export function getCategoryType() {
-  return [
-    {
+  return [{
       typeId: "course",
       typeName: "课程",
     },
@@ -201,7 +197,7 @@ export function downloadResource(id) {
   var elemIF = document.createElement("iframe");
   elemIF.src =
     process.env.VUE_APP_BASE_API +
-    "/common/download?id="+id;
+    "/common/download?id=" + id;
   elemIF.style.display = "none";
   document.body.appendChild(elemIF);
 }
@@ -220,4 +216,73 @@ export function getOrderStatusText(status) {
 
 export function awaitWrapper(promise) {
   return promise.then((res) => [null, res]).catch((err) => [err, null]);
+}
+
+
+/**
+ * 构造树型结构数据
+ * @param {*} data 数据源
+ * @param {*} id id字段 默认 'id'
+ * @param {*} parentId 父节点字段 默认 'parentId'
+ * @param {*} children 孩子节点字段 默认 'children'
+ */
+export function handleTree(data, id, parentId, children) {
+  console.log(data, id, parentId, children);
+  let config = {
+    id: id || 'id',
+    parentId: parentId || 'parentId',
+    childrenList: children || 'children'
+  };
+
+  var childrenListMap = {};
+  var nodeIds = {};
+  var tree = [];
+
+  for (let d of data) {
+    let parentId = d[config.parentId];
+    if (childrenListMap[parentId] == null) {
+      childrenListMap[parentId] = [];
+    }
+    nodeIds[d[config.id]] = d;
+    childrenListMap[parentId].push(d);
+  }
+
+  for (let d of data) {
+    let parentId = d[config.parentId];
+    if (nodeIds[parentId] == null) {
+      tree.push(d);
+    }
+  }
+
+  for (let t of tree) {
+    adaptToChildrenList(t);
+  }
+
+  function adaptToChildrenList(o) {
+    console.log(o);
+    if (childrenListMap[o[config.id]] !== null) {
+      o[config.childrenList] = childrenListMap[o[config.id]];
+    }
+    if (o[config.childrenList]) {
+      for (let c of o[config.childrenList]) {
+        adaptToChildrenList(c);
+      }
+    }
+  }
+  return tree;
+}
+
+
+
+export function handleArrayTree(arr=[]) {
+  let data = arr.map(item => {
+    item.id?item.id:item.id= item.menuId
+    item.value?item.value:item.value = item.menuId
+    item.label?item.label:item.label = item.menuName
+    if (item.children.length > 0) {
+      handleArrayTree(item.children)
+    } 
+    return item
+  })
+  return data
 }

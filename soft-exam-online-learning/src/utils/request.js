@@ -83,7 +83,7 @@ service.interceptors.response.use(
       Notification.error({
         title: msg,
       })
-      return Promise.reject('error')
+      return Promise.reject(msg)
     } else {
       return res.data
     }

@@ -4,8 +4,7 @@ import router from "./router";
 import store from "./store";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-import "@/utils/directives.js";
-import { hasPermission } from "./utils/permissionDirect";
+import directive from '@/directive'
 import "./permission";
 import VueParticles from "vue-particles";
 import VueAwesomeSwiper from "vue-awesome-swiper";
@@ -15,10 +14,10 @@ import mavonEditor from "mavon-editor";
 //引入样式
 import "swiper/css/swiper.css";
 import "@/assets/styles/index.scss";
-import divDrag from "./utils/divDrag.js";
 import "mavon-editor/dist/css/index.css";
 
-Vue.directive("divDrag", divDrag);
+
+Vue.use(directive);
 Vue.use(VueAwesomeSwiper);
 //引入线条背景
 Vue.use(VueParticles);
@@ -40,11 +39,6 @@ Vue.prototype.msgInfo = function (msg) {
 Vue.prototype.msgWarning = function (msg) {
   this.$message.warning(msg);
 };
-const Plugins = [hasPermission];
-
-Plugins.map((plugin) => {
-  Vue.use(plugin);
-});
 new Vue({
   router,
   store,

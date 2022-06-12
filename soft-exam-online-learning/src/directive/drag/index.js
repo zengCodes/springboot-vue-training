@@ -1,3 +1,8 @@
+/*
+ * @Description: 
+ * @Author: zenghuiqing
+ * @Date: 2022-06-12 16:04:17
+ */
 export default function drag(el) {
     let dragBox = el; //获取当前元素
     dragBox.onmousedown = e => {
