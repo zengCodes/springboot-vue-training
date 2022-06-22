@@ -144,11 +144,11 @@
             </el-form-item>
           </el-col>
           <el-col :span="24">
-            <el-form-item label="是否显示" prop="visible">
-              <!-- 0正常 1停用 -->
+            <el-form-item label="是否隐藏" prop="visible">
+              <!-- 0显示 1隐藏 -->
               <template>
-                <el-radio v-model="handleForm.visible" label="0">可用</el-radio>
-                <el-radio v-model="handleForm.visible" label="1">禁用</el-radio>
+                <el-radio v-model="handleForm.visible" label="0">显示</el-radio>
+                <el-radio v-model="handleForm.visible" label="1">隐藏</el-radio>
               </template>
             </el-form-item>
           </el-col>
@@ -262,6 +262,7 @@ export default {
     popoverHide(checkedIds, checkedData) {
       console.log(checkedIds);
       console.log(checkedData);
+      this.handleForm.parentId = checkedIds;
     },
     /**
      * 加载菜单表格
