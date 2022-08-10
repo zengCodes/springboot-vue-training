@@ -110,9 +110,6 @@ export default {
       let res = await getRouters();
       let { data, code } = res;
       if (code == 200) {
-        data.map((item) => {
-          item.visible = item.visible === "0";
-        });
         this.menuList = data;
       }
     },

@@ -1,3 +1,8 @@
+/*
+ * @Description: 
+ * @Author: zenghuiqing
+ * @Date: 2021-12-24 19:30:32
+ */
 const login = {
   state: {
     showLogin: false,
@@ -14,7 +19,6 @@ const login = {
   },
   actions: {
     setShowLogin({ commit }, login) {
-      console.log(login)
       commit('SET_SHOW_LOGIN', login)
     },
     setLoginAction({ commit }, action) {

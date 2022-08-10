@@ -146,7 +146,7 @@
                   <el-col :span="8">
                     <el-button
                       type="primary"
-                      v-hasPermission="['system:user:edit']"
+                      v-hasPermission="'system:user:edit'"
                       @click="submitForm"
                       size="small"
                       >更新</el-button

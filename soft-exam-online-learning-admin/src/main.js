@@ -18,7 +18,6 @@ import {
   selectDictLabel,
   selectDictLabels,
   downloadResource,
-  handleArrayTree
 } from "@/utils/zeng";
 import "./permission";
 import "@/assets/styles/user.scss";
@@ -39,7 +38,6 @@ Vue.config.productionTip = false;
 Vue.prototype.$echarts = echarts;
 Vue.prototype.getDicts = getDicts;
 Vue.prototype.getConfigKey = getConfigKey;
-Vue.prototype.handleArrayTree = handleArrayTree
 
 Vue.prototype.Notification = function (title, message, showClose) {
   this.$notify.success({

@@ -195,8 +195,7 @@ export default {
       this.$store
         .dispatch("Login", this.userLoginForm)
         .then(() => {
-          // this.$router.push({ path: "/home" }).catch(() => {});
-          this.$router.push({ path:  "/home" }).catch(() => {});
+          this.$router.push({ path: "/home" }).catch(() => {});
         })
         .catch(() => {
           this.loading = false;

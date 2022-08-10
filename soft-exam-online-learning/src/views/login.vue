@@ -10,7 +10,7 @@
         ref="userLoginFormRef"
         label-position="left"
         label-width="0px"
-        class="login-register-form"
+        class="demo-ruleForm login_form"
       >
         <div class="con">
           <h3 class="title">软考在线培训系统-登录</h3>
@@ -22,7 +22,7 @@
               type="text"
               auto-complete="off"
               placeholder="用户名"
-              prefix-icon="el-icon-user"
+              prefix-icon="iconfont el-icon-user"
             ></el-input>
           </el-form-item>
 
@@ -81,7 +81,7 @@
         </div>
       </el-form>
       <!-- 验证码 -->
-      <VScode
+      <Vcode
         :show="isShow"
         @success="success"
         @close="close"
@@ -98,25 +98,21 @@
         ref="userRegisterFormRef"
         label-position="left"
         label-width="0px"
-        class="login-register-form"
+        class="demo-ruleForm redister_form"
       >
         <div class="con">
-          <h3 class="title">软考在线培训系统-注册</h3>
-          <el-row>
-            <el-col>
-              <el-form-item prop="userName">
-                <el-input
-                  @keyup.enter.native="register"
-                  v-model="userRegisterForm.userName"
-                  class="el-input-text"
-                  type="text"
-                  auto-complete="off"
-                  placeholder="用户名"
-                  prefix-icon="el-icon-user"
-                ></el-input>
-              </el-form-item>
-            </el-col>
-          </el-row>
+          <h3 class="title">注册</h3>
+          <el-form-item prop="userName">
+            <el-input
+              @keyup.enter.native="register"
+              v-model="userRegisterForm.userName"
+              class="el-input-text"
+              type="text"
+              auto-complete="off"
+              placeholder="用户名"
+              prefix-icon="iconfont el-icon-user"
+            ></el-input>
+          </el-form-item>
 
           <el-form-item prop="password">
             <el-input
@@ -173,10 +169,10 @@
   </div>
 </template>
 <script>
-import VScode from "vue-puzzle-vcode";
-import { encrypt, decrypt } from "@/utils/jsencrypt";
-import { addUser } from "@/api/system/user";
-import Cookies from "js-cookie";
+import Vcode from 'vue-puzzle-vcode'
+import { encrypt, decrypt } from '@/utils/jsencrypt'
+import { addUser } from '@/api/system/user'
+import Cookies from 'js-cookie'
 
 export default {
   data() {
@@ -188,65 +184,65 @@ export default {
       //表单用户登入数据
       loading: false,
       userLoginForm: {
-        username: "test",
-        password: "admin123",
+        username: 'test',
+        password: 'admin123',
         rememberMe: false,
       },
       userRegisterForm: {
-        userName: "",
-        password: "",
+        userName: '',
+        password: '',
       }, //添加表单
       //验证规则
       loginRules: {
         username: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
+          { required: true, message: '请输入用户名', trigger: 'blur' },
           {
             min: 3,
             max: 12,
-            message: "长度在 3 到 12 个字符",
-            trigger: "blur",
+            message: '长度在 3 到 12 个字符',
+            trigger: 'blur',
           },
         ],
         password: [
-          { required: true, message: "请输入用户密码", trigger: "blur" },
+          { required: true, message: '请输入用户密码', trigger: 'blur' },
           {
             min: 6,
             max: 15,
-            message: "长度在 6 到 15 个字符",
-            trigger: "blur",
+            message: '长度在 6 到 15 个字符',
+            trigger: 'blur',
           },
         ],
       },
-    };
+    }
   },
   components: {
-    VScode,
+    Vcode,
   },
 
   methods: {
     //登录注册切换
     showToggle() {
-      this.current = !this.current;
+      this.current = !this.current
     },
     //登入提交
-    handleSubmit() {
-      this.$refs.userLoginFormRef.validate((valid) => {
+    handleSubmit: function () {
+      this.$refs.userLoginFormRef.validate(valid => {
         if (!valid) {
-          return;
+          return
         } else {
-          this.isShow = true;
+          this.isShow = true
         }
-      });
+      })
     },
     //重置表单
     resetForm(val) {
-      this.$refs[val].resetFields();
+      this.$refs[val].resetFields()
     },
     // 获取cookie
     getCookie() {
-      const username = Cookies.get("username");
-      const password = Cookies.get("password");
-      const rememberMe = Cookies.get("rememberMe");
+      const username = Cookies.get('username')
+      const password = Cookies.get('password')
+      const rememberMe = Cookies.get('rememberMe')
       this.userLoginForm = {
         username:
           username === undefined ? this.userLoginForm.username : username,
@@ -255,65 +251,65 @@ export default {
             ? this.userLoginForm.password
             : decrypt(password),
         rememberMe: rememberMe === undefined ? false : Boolean(rememberMe),
-      };
+      }
     },
     //验证成功
     success() {
-      this.loading = true;
-      this.loading = true;
+      this.loading = true
+      this.loading = true
       if (this.userLoginForm.rememberMe) {
-        Cookies.set("username", this.userLoginForm.username, { expires: 30 });
-        Cookies.set("password", encrypt(this.userLoginForm.password), {
+        Cookies.set('username', this.userLoginForm.username, { expires: 30 })
+        Cookies.set('password', encrypt(this.userLoginForm.password), {
           expires: 30,
-        });
-        Cookies.set("rememberMe", this.userLoginForm.rememberMe, {
+        })
+        Cookies.set('rememberMe', this.userLoginForm.rememberMe, {
           expires: 30,
-        });
+        })
       } else {
-        Cookies.remove("username");
-        Cookies.remove("password");
-        Cookies.remove("rememberMe");
+        Cookies.remove('username')
+        Cookies.remove('password')
+        Cookies.remove('rememberMe')
       }
       this.$store
-        .dispatch("Login", this.userLoginForm)
+        .dispatch('Login', this.userLoginForm)
         .then(() => {
-          this.$router.push({ path: "/index" }).catch(() => {});
+          this.$router.push({ path: '/index' }).catch(() => {})
         })
         .catch(() => {
-          this.loading = false;
-        });
+          this.loading = false
+        })
     },
 
     /**
      * 注册用户
      */
-    register() {
-      this.$refs.userRegisterFormRef.validate(async (valid) => {
+    async register() {
+      this.$refs.userRegisterFormRef.validate(async valid => {
         if (!valid) {
-          return;
+          return
         } else {
-          let res = await addUser(this.userRegisterForm);
-          let { code, msg } = res;
+          let res = await addUser(this.userRegisterForm)
+          let { code, msg } = res
           if (code === 200) {
             this.$notify.success({
-              title: "操作成功",
-              message: "用户注册成功,跳回登录",
-            });
-            this.current = true;
+              title: '操作成功',
+              message: '用户注册成功,跳回登录',
+            })
+            this.current = true
           } else {
-            this.$message.error("用户注册失败:" + msg);
+            this.$message.error('用户注册失败:' + msg)
           }
         }
-      });
+      })
     },
     close() {
-      this.isShow = false;
+      this.isShow = false
     },
   },
   created() {
-    this.getCookie();
+    this.getCookie()
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 #login-register {
@@ -328,17 +324,19 @@ export default {
     align-items: center;
   }
   .lizi {
-    background: url("~@/assets/images/bg1.png") center;
+    background: url('~@/assets/images/bg1.png') center;
     background-size: 100% 100%;
     overflow-y: hidden;
     min-height: 100%;
     height: calc(100% - 100px);
   }
   // 登录-注册按钮
-  .login-register-form {
+  .login_form {
     .login-button {
       margin-right: 30px;
     }
+  }
+  .redister_form {
     .register-button {
       margin-right: 30px;
       margin-top: 30px;
@@ -346,7 +344,8 @@ export default {
   }
 }
 /*登录框样式*/
-::v-deep .login-register-form {
+::v-deep .login_form,
+.redister_form {
   color: #ffffff;
   position: absolute;
   top: 20%;
@@ -410,7 +409,7 @@ export default {
   margin: 25px 0 60px 0;
 }
 .con .title::after {
-  content: "";
+  content: '';
   width: 150px;
   height: 3px;
   background: #ffffff;
