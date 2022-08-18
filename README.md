@@ -5,8 +5,20 @@
 
 ### **组织结构**
 
-后端项目结构的一些简单说明
 
+
+
+- 项目结构的一些简单说明
+
+```js
+前端系统前台 soft-exam-online-learning  
+
+前端系统管理后台  soft-exam-online-learning-admin
+
+后端  soft-exam-server  
+```
+
+- 后端服务项目结构的一些简单说明
 ```js
 
 ├─zeng-business 业务模块服务

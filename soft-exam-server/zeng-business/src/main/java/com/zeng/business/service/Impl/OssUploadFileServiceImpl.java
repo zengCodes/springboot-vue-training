@@ -11,6 +11,7 @@ import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 import com.zeng.business.service.OssUploadFileService;
 import com.zeng.common.config.ZengConfig;
+import com.zeng.common.utils.file.FileUploadUtils;
 import com.zeng.common.utils.file.FileUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -52,9 +53,8 @@ public class OssUploadFileServiceImpl implements OssUploadFileService {
     public String upLoadFile(MultipartFile file){
         String resultImage = "";
         try {
-            // 判断图片后缀，并使用工具类根据上传文件生成唯一名称,防止截断字符如“%00”
-            String fileName = file.getOriginalFilename();
-            String name = FileUtils.getRandomName(fileName);
+            String name = FileUploadUtils.extractFilename(file);
+            System.out.println("----"+name);
             //判断是否为恶意程序
             // 上传文件
             Response res = uploadManager.put(file.getInputStream(), name, token, null, null);

@@ -2,8 +2,6 @@ package com.zeng.common.core.domain;
 
 import com.zeng.common.constant.HttpStatus;
 import com.zeng.common.utils.StringUtils;
-import lombok.Data;
-import org.apache.poi.ss.formula.functions.T;
 
 import java.util.HashMap;
 
@@ -28,8 +26,7 @@ public class ResponseBean extends HashMap<String, Object> {
     /**
      * 数据对象
      */
-    public static final String DATA_TAG = "result";
-
+    public static final String DATA_TAG = "data";
 
     /**
      * 初始化一个新创建的 AjaxResult 对象，使其表示一个空消息。

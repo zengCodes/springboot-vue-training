@@ -22,11 +22,9 @@ public class FileUtils {
     public static String FILENAME_PATTERN = "[a-zA-Z0-9_\\-\\|\\.\\u4e00-\\u9fa5]+";
 
     public static String getRandomName(String fileName) {
-
         // 获取文件后缀
         int index = fileName.lastIndexOf(".");
         String suffix = fileName.substring(index);
-
         //检验文件
         if(StringUtils.isNotEmpty(suffix)){
             //改变上传到服务器的文件名  uuid + suffix

@@ -21,8 +21,8 @@ zeng:
   #七牛云存储
   accessKey: 131pLPvfspAnkp2BgCErdD6FH1_7IbfIHkrbGeja
   secretKey: 6RS4SZPqo57xQp3E2zBiy_iEmyFM-_kD3H6zAZsm
-  bucket: zeng-soft-exam
-  domain: http://rb386j8ex.hn-bkt.clouddn.com/
+  bucket: zeng-soft-exam-one
+  domain: http://rf2ca1ste.hn-bkt.clouddn.com/
 
 # 开发环境配置
 server:

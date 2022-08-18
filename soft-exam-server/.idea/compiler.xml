@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zeng-framework" />
+        <module name="zeng-common" />
+        <module name="zeng-web" />
+        <module name="zeng-system" />
+        <module name="zeng-business" />
+        <module name="zeng-mail-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="zeng-mail" target="1.8" />
+      <module name="zeng-mq-mail" target="1.8" />
+      <module name="zeng-screw" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -8,7 +8,6 @@ import com.zeng.common.core.redis.RedisCache;
 import com.zeng.common.utils.sign.Base64;
 import com.zeng.common.utils.uuid.IdUtils;
 import com.zeng.system.service.ISysConfigService;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.FastByteArrayOutputStream;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +18,6 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -59,6 +56,7 @@ public class CaptchaController {
     public ResponseBean getCode(HttpServletResponse response) throws IOException {
         ResponseBean ajax = ResponseBean.success();
         boolean captchaOnOff = configService.selectCaptchaOnOff();
+        ajax.put("captchaOnOff", captchaOnOff);
         if (!captchaOnOff) {
             return ajax;
         }
@@ -86,11 +84,9 @@ public class CaptchaController {
         } catch (IOException e) {
             return ResponseBean.error(e.getMessage());
         }
-        Map<String, Object> map = new HashMap<>();
-        map.put("uuid",uuid);
-        map.put("captchaOnOff", captchaOnOff);
-        map.put("img","data:image/jpg;base64,"+Base64.encode(os.toByteArray()));
-        ajax.put("result", map);
+
+        ajax.put("uuid", uuid);
+        ajax.put("img", Base64.encode(os.toByteArray()));
         return ajax;
     }
 }

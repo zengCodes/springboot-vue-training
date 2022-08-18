@@ -71,7 +71,8 @@ public class ResourceAlbumServiceImpl implements ResourceAlbumService {
                 FileResource file = new FileResource();
                 BeanUtils.copyProperties(fileResource, file);
                 file.setId(fileResource.getId());
-                file.setLocation(fileResource.getLocation().replaceAll("/dev-api", ""));
+                file.setRefProject(fileResource.getRefProject());
+//                file.setLocation(fileResource.getLocation().replaceAll("/dev-api", ""));
                 fileResourceMapper.updateByPrimaryKey(file);
             }
         }
@@ -93,7 +94,7 @@ public class ResourceAlbumServiceImpl implements ResourceAlbumService {
             if(resourceAlbumsVO.getImgList().size()>0){
                 for (FileResource fileResource : resourceAlbumsVO.getImgList()) {
                     fileResource.setDelStatus(resourceAlbumsVO.getFlag());
-                    fileResource.setLocation(fileResource.getLocation().replaceAll("/dev-api", ""));
+//                    fileResource.setLocation(fileResource.getLocation().replaceAll("/dev-api", ""));
                     fileResourceMapper.updateByPrimaryKey(fileResource);
                 }
             }
